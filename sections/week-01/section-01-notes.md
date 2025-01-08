@@ -4,5 +4,3 @@ Be sure we have at least 2 browsers to test with (ideally with two different eng
 HTML = Content
 CSS = Presentation
 JS = Interaction
-
-
