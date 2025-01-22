@@ -1,0 +1,207 @@
+/* Joshua Evans' CIS195 CSS for Lab3 */
+
+html {
+	/* 
+		Prevent the appearance of a vertical scroll bar from shifting the page to the left. Do this by adding
+		a permanent margin the width of the scrollbar to the right side of the page. This does cause a
+		horizontal scroll bar to appear, so it is hidden with the overflow-x property
+
+		I actually like this a lot better than the new "scrollbar-gutter" property :D
+
+		Big thanks to @pongo!
+		https://stackoverflow.com/a/39289453
+	*/
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+}
+
+body
+{
+	color: #F3F3F3;
+	background-color: #424242;
+
+	font-family: "Lato", serif;
+}
+
+.header-container
+{
+	display: flex;
+	justify-content: center;
+}
+
+header
+{
+	display: inline-block;
+	background-color: #404040;
+	text-align: center;
+}
+
+h1
+{
+	display: inline-block;
+	background-color: #404040;
+	text-align: center;
+	border-radius: 0.2em;
+
+	padding-left: 0.4em;
+	padding-right: 0.4em;
+
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}
+
+h2
+{
+	margin-top: 0em;
+	margin-bottom: 0.1em;
+}
+
+h3
+{
+	margin-top: 0.1em;
+}
+
+.nav-container
+{
+	display: flex;
+	justify-content: center;
+}
+
+nav
+{
+	display: flex;
+	justify-content: space-between;
+	background-color: #404040;
+
+	padding: 0.1em;
+	padding-left: 0.2em;
+	padding-right: 0.2em;
+
+	width: 30em;	
+}
+
+p
+{
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+a
+{
+	color: #A29CEB;
+}
+
+hr
+{
+	color: #F3F3F3;
+}
+
+.main-container
+{
+	display: flex;
+	justify-content: center;
+}
+
+main
+{
+	max-width: 50em;
+	min-width: 40em;
+	background-color: #404040;
+
+	padding-top: 0.2em;
+	padding-left: 0.2em;
+}
+
+aside
+{
+	text-align: right;
+	margin-left: 10em;
+
+	border-left: 0.1em solid #F3F3F3;
+}
+
+blockquote
+{
+
+}
+
+table
+{
+	
+}
+
+tr
+{
+	
+}
+
+th
+{
+	
+}
+
+td
+{
+	
+}
+
+ol
+{
+	
+}
+
+ul
+{
+	
+}
+
+li
+{
+	
+}
+
+dl
+{
+	
+}
+
+dt
+{
+	
+}
+
+dd
+{
+	
+}
+
+details
+{
+	
+}
+
+summary
+{
+	
+}
+
+footer
+{
+	display: flex;
+
+	position: fixed;
+  left: 0.3em;
+  bottom: 0.3em;
+  width: 100%;
+}
+
+address
+{
+	
+}
+
+.right-justify
+{
+	margin-left: auto;
+	margin-right: 0.7em;
+}
