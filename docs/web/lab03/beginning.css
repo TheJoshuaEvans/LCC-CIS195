@@ -85,6 +85,11 @@ nav
 	width: 30em;	
 }
 
+nav a:hover
+{
+	font-weight: bold;
+}
+
 p
 {
 	padding-left: 1em;
