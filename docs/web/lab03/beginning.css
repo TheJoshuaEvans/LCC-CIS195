@@ -61,6 +61,11 @@ h3
 	margin-top: 0.1em;
 }
 
+h4
+{
+	margin-bottom: 0.2em;
+}
+
 .nav-container
 {
 	display: flex;
@@ -120,69 +125,47 @@ aside
 	border-left: 0.1em solid #F3F3F3;
 }
 
-blockquote
-{
-
-}
-
-table
-{
-	
-}
-
-tr
-{
-	
-}
-
-th
-{
-	
-}
-
-td
-{
-	
-}
-
 ol
 {
-	
+	margin-top: 0em;
+}
+
+ol ul
+{
+	padding-left: 1.5em
+}
+
+ul ol
+{
+	padding-left: 1.5em
 }
 
 ul
 {
-	
+	margin-top: 0em;
 }
 
 li
 {
-	
+	font-style: italic;
 }
 
 dl
 {
-	
+	margin-top: 0em;
 }
 
 dt
 {
-	
+	font-weight: bold;
+
+	margin-top: 0.5em;
+	margin-left: 0.5em;
 }
 
 dd
 {
-	
-}
-
-details
-{
-	
-}
-
-summary
-{
-	
+	font-style: italic;
 }
 
 footer
@@ -193,11 +176,6 @@ footer
   left: 0.3em;
   bottom: 0.3em;
   width: 100%;
-}
-
-address
-{
-	
 }
 
 .right-justify
