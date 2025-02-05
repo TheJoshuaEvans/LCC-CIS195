@@ -1,0 +1,484 @@
+/** Joshua Evans' CIS195 CSS for Lab 5 */
+/** Global stylesheet that all pages use */
+
+/* =============== PAGE LAYOUT =============== */
+/* Top level elements that define the page layout */
+html {
+  /* 
+    Prevent the appearance of a vertical scroll bar from shifting the page to the left. Do this by adding
+    a permanent margin the width of the scrollbar to the right side of the page. This does cause a
+    horizontal scroll bar to appear, so it is hidden with the overflow-x property
+
+    I actually like this a lot better than the new "scrollbar-gutter" property :D
+
+    Big thanks to @pongo!
+    https://stackoverflow.com/a/39289453
+  */
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+}
+
+body
+{
+  color: #F3F3F3;
+  background-color: #424242;
+
+  font-family: "Open Sans", sans-serif;
+
+  /* 
+    Add an outline to all text to make it a bit easier to read,
+    and gives everything a fun comic-book feel that I really dig :D
+  */
+  text-shadow: 
+    0.0em     0.08em    0.06em  black,
+    0.0em     -0.08em   0.06em  black,
+    0.08em    0.0em     0.06em  black,
+    -0.08em   0.0em     0.06em  black,
+    0.08em    0.08em    0.06em  black,
+    -0.08em   0.08em    0.06em  black,
+    0.08em    -0.08em   0.06em  black,
+    -0.08em   -0.08em   0.06em  black;
+}
+
+/* Also add the text outline to button styling so it isn't overwritten */
+button {
+  text-shadow: 
+    0.0em     0.08em    0.06em  black,
+    0.0em     -0.08em   0.06em  black,
+    0.08em    0.0em     0.06em  black,
+    -0.08em   0.0em     0.06em  black,
+    0.08em    0.08em    0.06em  black,
+    -0.08em   0.08em    0.06em  black,
+    0.08em    -0.08em   0.06em  black,
+    -0.08em   -0.08em   0.06em  black;
+}
+
+/* -------- Content Header -------- */
+.header-wrapper
+{
+  display: flex;
+  justify-content: center;
+}
+
+header
+{
+  display: inline-block;
+  text-align: center;
+
+  background-color: #404040;
+  box-shadow: 0 0 8px 8px #404040;
+
+  margin-bottom: 1em;
+}
+
+/* -------- Navigation -------- */
+.nav-wrapper
+{
+  display: flex;
+  justify-content: center;
+
+  /* 
+    Keep the navbar at the top of the page, but pulled down just a little bit so you can see the
+    page content sneak by behind it when scrolling
+  */
+  position: sticky;
+  top: 0.5em;
+}
+
+nav
+{
+  margin-bottom: 0.6em;
+
+  box-shadow: 0 0 8px 8px #3C3C3C;
+}
+
+/* 
+  Use a list for nav items! Adapted from W3Schools:
+  https://www.w3schools.com/css/css_navbar_horizontal.asp
+*/
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+nav li {
+  float: left;
+}
+
+nav li:hover {
+  background-color: #111;
+}
+
+nav li a {
+  display: inline-block;
+  
+  text-align: center;
+  text-decoration: none;
+
+  padding: 1em;
+
+  /* 
+    Apparently pseudo classes have a pretty high specificity, so the very naughty "!important" tag is
+    used to ensure the nav link text doesn't change properties. The !important tag overrides
+    all other CSS rules, so it can cause major headaches if it is abused
+  */
+  color: #F3F3F3 !important;
+  font-weight: bold !important;
+  font-style: initial !important;
+}
+
+/* 
+  Squeeze in the nav bar buttons a bit when the screen gets too small so that it doesn't wrap
+*/
+@media (max-width: 37em)
+{
+  nav li a {
+    padding: 1em 0.3em;
+    font-size: 0.87em;
+  }
+}
+
+nav li a.active {
+  background-color: #2c1d6a;
+}
+
+nav li a:hover {
+  background-color: #111;
+}
+
+/* -------- Main Content -------- */
+.main-wrapper
+{
+  display: flex;
+  justify-content: center;
+}
+
+main
+{
+  max-width: 50em;
+  padding: 0.2em;
+
+  background-color: #404040;
+  box-shadow: 0 0 8px 8px #404040;
+}
+
+/* 
+  Class used to give the main content a background image on the pictures page
+*/
+main.asphalt-background
+{
+  background-image: url("../images/asphalt.jpg");
+  overflow: hidden;
+
+  border-radius: 1em;
+  margin-top: 1em;
+
+  /* Make the edges a little fuzzy */
+  box-shadow: 0 0 8px 8px #1E1E1E;
+}
+
+/* -------- Footer Content -------- */
+footer
+{
+  position: fixed;
+  left: 0.3em;
+  bottom: 0.3em;
+  width: 100%;
+}
+
+/* 
+  If the footer will overlap with the main content, unstick
+  it from the viewport and let it stay at the bottom of the page
+*/
+@media (max-width: 72em)
+{
+  footer {
+    margin-top: 0.5em;
+    position: initial;
+  }
+}
+
+/* =============== TEXT ELEMENTS =============== */
+/* -------- Headers -------- */
+h1
+{
+  display: inline-block;
+  background-color: #404040;
+  text-align: center;
+  border-radius: 0.2em;
+
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+h2
+{
+  margin-top: 0em;
+  margin-bottom: 0.1em;
+}
+
+h3
+{
+  margin-top: 0.1em;
+}
+
+h4
+{
+  margin-bottom: 0.2em;
+}
+
+/* -------- Block Text -------- */
+p
+{
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+aside
+{
+  float: right;
+  max-width: 20em;
+  text-align: left;
+
+  padding-left: 1em;
+  
+  border-left: 0.1em solid #F3F3F3;
+
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: 1em;
+}
+
+/* 
+  If the screen gets too small, make the aside appear on its
+  own row, but still on the right side of the page
+*/
+@media (max-width: 40em)
+{
+  aside
+  {
+    margin-left: auto;
+    float: none;
+
+    max-width: 30em;
+  }
+}
+
+/* -------- Text Design -------- */
+hr
+{
+  color: #F3F3F3;
+}
+
+/* =============== IMAGE ELEMENTS =============== */
+/* -------- Special Image Classes -------- */
+img.float-left {
+  float: left;
+}
+
+img.float-right {
+  float: right;
+
+  /* Give the right image a little extra room to make it better fit in with the left one */
+  margin-left: 0.3em;
+  margin-right: 0.2em;
+}
+
+img.inline {
+  display: inline;
+  vertical-align: middle;
+  height: 1em;
+}
+
+/* =============== LIST ELEMENTS =============== */
+ol
+{
+  margin-top: 0em;
+}
+
+ol ul
+{
+  padding-left: 1.5em
+}
+
+ul ol
+{
+  padding-left: 1.5em
+}
+
+ul
+{
+  margin-top: 0em;
+}
+
+li
+{
+  font-style: italic;
+}
+
+dl
+{
+  margin-top: 0em;
+}
+
+dt
+{
+  font-weight: bold;
+
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+}
+
+dd
+{
+  font-style: italic;
+}
+
+/* =============== INTERACTIVE ELEMENTS =============== */
+/* Elements like links and buttons a user is meant to directly interact with */
+a
+{
+  color: #bab7df;
+}
+
+a:visited
+{
+  color: #9793d0;
+}
+
+a:hover
+{
+  font-weight: bold;
+}
+
+/* Make the dark button borders thinner and rounded so they don't look like they are from the 90s*/
+button {
+  border-radius: 1% / 100%;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+}
+
+button:active {
+  border-top-width: 1px;
+  border-left-width: 1px;
+}
+
+/* =============== SPECIAL CLASSES =============== */
+/* Bespoke classes that do general formatting work */
+.right-justify
+{
+  float: right;
+  margin-left: auto;
+  margin-right: 0.7em;
+}
+
+/* -------- Accordion -------- */
+/* 
+  Classes used to make accordions work. Adapted from W3Schools:
+  https://www.w3schools.com/HOWTO/howto_js_accordion.asp
+*/
+.accordion {
+  color: #F3F3F3;
+  background-color: #393939;
+  
+  cursor: pointer;
+  
+  text-align: left;
+  font-size: 1.01em;
+
+  padding: 1em;
+  width: 100%;
+}
+
+.accordion-active {
+  background-color: #454545;
+}
+
+.accordion:hover {
+  background-color: #555;
+}
+
+.accordion::after {
+  content: '\002B'; /* + */
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.accordion-active::after {
+  content: "\2212"; /* - */
+}
+
+.panel {
+  padding: 0 1em;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+/* =============== PRINTING =============== */
+/* 
+  Numerous changes are needed to prepare the page for printing. The !important tag is used judiciously
+  since these styles should be the "final authority" on what things look like. That is also why this
+  section is at the bottom of the file
+*/
+@media print {
+  /* Hide the navbar and footer */
+  nav, footer {
+    display: none;
+  }
+
+  /* make the text black and remove the shadows */
+  body {
+    color: black;
+    text-shadow: none;
+  }
+
+  /* Remove the decorations and margins of the header and main sections */
+  header, main {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    font-weight: normal !important;
+    background-image: none !important;
+
+    margin: 0em !important;
+  }
+
+  /* Make the aside separator line black */
+  aside
+  {
+    border-left: 0.1em solid black;
+  }
+  
+  /* Add the copyright notice to the end */
+  main::after {
+    content: "© 2025 Joshua Evans";
+    float: right;
+  }
+
+  /* Remove button decorations */
+  button {
+    border: none;
+
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    font-weight: normal !important;
+
+    margin: 0em !important;
+  }
+  button.accordion::after {
+    display: none;
+  }
+
+  /* Show all accordion panels */
+  .panel {
+    max-height: initial !important;
+  }
+}

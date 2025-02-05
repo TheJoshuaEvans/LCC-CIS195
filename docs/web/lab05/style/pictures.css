@@ -1,0 +1,19 @@
+/** Joshua Evans' CIS195 CSS for Lab 5 */
+/** Styles intended only for use on the pictures page */
+
+/* Bold the text a little bit so it's easier to read */
+main {
+  font-weight: bold;
+}
+
+/* Justify the first paragraph on the pictures page to better showcase the image float */
+main p:first-of-type
+{
+  text-align: justify;
+}
+
+/* The main content header also looks kind of weird on the left on this page, so center it */
+h3 {
+  width: 100%;
+  text-align: center;
+}
